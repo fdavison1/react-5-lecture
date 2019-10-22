@@ -35,7 +35,9 @@ render(){
     <Route exact path='/' component={()=> (
     <GreatHall updateHouseInfo={this.updateHouseInfo}/>
     )}/>
-    <Route path='/about' component={About}/>
+    <Route path='/about' component={()=>(
+      <About house={this.state.house}/>
+    )}/>
     <Route path='/house/:name' component={() => (
       <House
         mainColor={this.state.mainColor}

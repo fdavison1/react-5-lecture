@@ -1,11 +1,14 @@
 import React from 'react'
+import {withRouter} from 'react-router-dom'
 
 const House = (props) => {
     return (
-        <div>
+        <>
+        <header style={{background: props.secondaryColor, color: props.mainColor}}>
             <h2>Welcome to {props.match.params.name}!</h2>
-        </div>
+        </header>
+        </>
     )
 }
 
-export default House
+export default withRouter(House)

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 import sorting from '../utils/sorting'
 
 
@@ -16,9 +16,9 @@ const GreatHall = (props) => {
         <img 
             src="https://vignette.wikia.nocookie.net/harrypotter/images/6/62/Sorting_Hat.png/revision/latest/scale-to-width-down/2000?cb=20161120072849" 
             alt="sorting hat"
-            onClick={() => sorting.randomHouse(props.updateHouseInfo)}/>
+            onClick={() => sorting.randomHouse(props.updateHouseInfo, props.history.push)}/>
         </>
     )
 }
 
-export default GreatHall
+export default withRouter(GreatHall)

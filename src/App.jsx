@@ -36,7 +36,11 @@ render(){
     <GreatHall updateHouseInfo={this.updateHouseInfo}/>
     )}/>
     <Route path='/about' component={About}/>
-    <Route path='/house/:name' component={House}/>
+    <Route path='/house/:name' component={() => (
+      <House
+        mainColor={this.state.mainColor}
+        secondaryColor={this.state.secondaryColor}
+      />)}/>
     </div>
     </HashRouter>
   );

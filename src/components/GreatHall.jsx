@@ -1,8 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import sorting from '../utils/sorting'
 
 
-const GreatHall = () => {
+const GreatHall = (props) => {
     return (
         <>
         <header>
@@ -12,6 +13,10 @@ const GreatHall = () => {
             <Link to='/about'>History of Magic</Link>
             {/* <Link to='/' */}
         </nav>
+        <img 
+            src="https://vignette.wikia.nocookie.net/harrypotter/images/6/62/Sorting_Hat.png/revision/latest/scale-to-width-down/2000?cb=20161120072849" 
+            alt="sorting hat"
+            onClick={() => sorting.randomHouse(props.updateHouseInfo)}/>
         </>
     )
 }
